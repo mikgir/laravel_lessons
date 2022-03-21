@@ -14,6 +14,7 @@ class Controller extends BaseController
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
     /**
+     * @param int|null $id
      * @return array
      */
     #[ArrayShape(['id' => "int|mixed", 'title' => "string", 'author' => "string", 'image' => "string", 'status' => "string", 'description' => "string"])]
@@ -26,20 +27,20 @@ class Controller extends BaseController
                 'id' => $id,
                 'title' => $faker->jobTitle(),
                 'author' => $faker->userName(),
-                'image' => $faker->imageUrl(250, 170),
+                'image' => $faker->imageUrl(400, 350),
                 'status' => $statusList[mt_rand(0, 2)],
                 'description' => $faker->text(100)
             ];
         }
 
         $data = [];
-        for ($i = 0; $i < 10; $i++) {
+        for ($i = 0; $i < 9; $i++) {
             $id = $i + 1;
             $data[] = [
                 'id' => $id,
                 'title' => $faker->jobTitle(),
                 'author' => $faker->userName(),
-                'image' => $faker->imageUrl(250, 170),
+                'image' => $faker->imageUrl(400, 350),
                 'status' => $statusList[mt_rand(0, 2)],
                 'description' => $faker->text(100)
             ];
