@@ -8,452 +8,160 @@
             <!-- Container -->
             <div class="container">
                 <div id="slider-1" class="carousel slide" data-ride="carousel">
-
                     <!-- Wrapper for slides -->
                     <div class="carousel-inner" role="listbox">
                         <div class="item active">
                             <div class="col-md-6 col-sm-6 col-xs-6 big-post">
                                 <!-- Type Post -->
                                 <div class="type-post color-1">
-                                    <div class="entry-cover"><a href="#"><img src="assets/images/slider-box1.jpg"
-                                                                              alt="Post"/></a></div>
+                                    <div class="entry-cover"><a href="{{ route('news.show', $bigNews['id']) }}"><img
+                                                src="{{ $bigNews['image'] }}"
+                                                alt="Post"/></a></div>
                                     <div class="entry-content">
                                         <div class="post-category"><a href="#" title="World">World</a></div>
-                                        <h3 class="entry-title"><a href="#">Grand Canyon Considers Changes to Back
-                                                country Rules for new hikers</a></h3>
-                                        <p>Reporter is one of the excellent magazine in the world.Newshub magazine
-                                            reached many readers very soon.</p>
+                                        <h3 class="entry-title"><a href="#">{{ $bigNews['title'] }}</a></h3>
+                                        <p>{{ $bigNews['description'] }}</p>
                                         <div class="entry-footer">
-                                            <span class="post-date"><a href="#">08 July, 2016</a></span>
+                                            <span class="post-date"><a href="#">{{ date('Y-m-d') }}</a></span>
                                             <span class="post-like"><i class="fa fa-heart-o"></i><a
                                                     href="#">356</a></span>
-                                            <span class="post-view"><i class="fa fa-eye"></i><a href="#">589</a></span>
+                                            <span class="post-view"><i class="fa fa-eye"></i><a
+                                                    href="#">589</a></span>
                                         </div>
-                                        <a href="#" title="Read More">Read More <i class="fa fa-angle-right"></i></a>
+                                        <a href="{{ route('news.show', $bigNews['id']) }}" title="Read More">узнать
+                                            больше <i
+                                                class="fa fa-angle-right"></i></a>
                                     </div>
                                 </div><!-- Type Post /- -->
                             </div>
-                            <div class="col-md-3 col-sm-3 col-xs-6 thumb-post">
-                                <!-- Type Post -->
-                                <div class="type-post color-2">
-                                    <div class="entry-cover"><a href="#"><img src="assets/images/slider-thumb1.jpg"
-                                                                              alt="Post"/></a></div>
-                                    <div class="entry-content">
-                                        <div class="post-category"><a href="#" title="Travel">Travel</a></div>
-                                        <h3 class="entry-title"><a href="#">National Forest System Trails Stewardship
-                                                Act</a></h3>
-                                        <p>Reporter is one of the excellent magazine in the world.Newshub magazine
-                                            reached many readers very soon.</p>
-                                        <div class="entry-footer">
-                                            <span class="post-date"><a href="#">12 June, 2016</a></span>
-                                            <span class="post-like"><i class="fa fa-heart-o"></i><a
-                                                    href="#">106</a></span>
-                                            <span class="post-view"><i class="fa fa-eye"></i><a href="#">256</a></span>
+                            @foreach( $thumbNews as $thumbNew)
+                                <div class="col-md-3 col-sm-3 col-xs-6 thumb-post">
+                                    <!-- Type Post -->
+                                    <div class="type-post color-2">
+                                        <div class="entry-cover"><a
+                                                href="{{ route('news.show', $thumbNew['id']) }}"><img
+                                                    src="{{ $thumbNew['image'] }}"
+                                                    alt="Post"/></a></div>
+                                        <div class="entry-content">
+                                            <div class="post-category"><a href="#" title="Travel">Travel</a></div>
+                                            <h3 class="entry-title"><a href="#">{{ $thumbNew['title'] }}</a></h3>
+                                            <p>{{ $thumbNew['description'] }}</p>
+                                            <div class="entry-footer">
+                                                <span class="post-date"><a href="#">{{ date('Y-m-d') }}</a></span>
+                                                <span class="post-like"><i class="fa fa-heart-o"></i><a
+                                                        href="#">106</a></span>
+                                                <span class="post-view"><i class="fa fa-eye"></i><a
+                                                        href="#">256</a></span>
+                                            </div>
+                                            <a href="{{ route('news.show', $thumbNew['id']) }}" title="Read More">читать
+                                                больше <i
+                                                    class="fa fa-angle-right"></i></a>
                                         </div>
-                                        <a href="#" title="Read More">Read More <i class="fa fa-angle-right"></i></a>
-                                    </div>
-                                </div><!-- Type Post /- -->
-                            </div>
-                            <div class="col-md-3 col-sm-3 col-xs-6 thumb-post">
-                                <!-- Type Post -->
-                                <div class="type-post color-3">
-                                    <div class="entry-cover"><a href="#"><img src="assets/images/slider-thumb2.jpg"
-                                                                              alt="Post"/></a></div>
-                                    <div class="entry-content">
-                                        <div class="post-category"><a href="#" title="Design">Design</a></div>
-                                        <h3 class="entry-title"><a href="#">Mercedes Benz CLS63 AMG In Depth Review</a>
-                                        </h3>
-                                        <p>Reporter is one of the excellent magazine in the world.Newshub magazine
-                                            reached many readers very soon.</p>
-                                        <div class="entry-footer">
-                                            <span class="post-date"><a href="#">22 June, 2016</a></span>
-                                            <span class="post-ratings">
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i> (5.0)
-												</span>
-                                        </div>
-                                        <a href="#" title="Read More">Read More <i class="fa fa-angle-right"></i></a>
-                                    </div>
-                                </div><!-- Type Post /- -->
-                            </div>
-                            <div class="col-md-3 col-sm-3 col-xs-6 thumb-post">
-                                <!-- Type Post -->
-                                <div class="type-post color-4">
-                                    <div class="entry-cover"><a href="#"><img src="assets/images/slider-thumb3.jpg"
-                                                                              alt="Post"/></a></div>
-                                    <div class="entry-content">
-                                        <div class="post-category"><a href="#" title="Sports">Sports</a></div>
-                                        <h3 class="entry-title"><a href="#">Florida Proposes Bear-Proofing Measures</a>
-                                        </h3>
-                                        <p>Reporter is one of the excellent magazine in the world.Newshub magazine
-                                            reached many readers very soon.</p>
-                                        <div class="entry-footer">
-                                            <span class="post-date"><a href="#">28 June, 2016</a></span>
-                                            <span class="post-like"><i class="fa fa-heart-o"></i><a
-                                                    href="#">952</a></span>
-                                            <span class="post-view"><i class="fa fa-eye"></i><a href="#">681</a></span>
-                                        </div>
-                                        <a href="#" title="Read More">Read More <i class="fa fa-angle-right"></i></a>
-                                    </div>
-                                </div><!-- Type Post /- -->
-                            </div>
-                            <div class="col-md-3 col-sm-3 col-xs-6 thumb-post">
-                                <!-- Type Post -->
-                                <div class="type-post color-5">
-                                    <div class="entry-cover"><a href="#"><img src="assets/images/slider-thumb4.jpg"
-                                                                              alt="Post"/></a></div>
-                                    <div class="entry-content">
-                                        <div class="post-category"><a href="#" title="business">business</a></div>
-                                        <h3 class="entry-title"><a href="#">Worst Android issues and how to fix them</a>
-                                        </h3>
-                                        <p>Reporter is one of the excellent magazine in the world.Newshub magazine
-                                            reached many readers very soon.</p>
-                                        <div class="entry-footer">
-                                            <span class="post-date"><a href="#">02 July, 2016</a></span>
-                                            <span class="post-like"><i class="fa fa-heart-o"></i><a
-                                                    href="#">320</a></span>
-                                            <span class="post-view"><i class="fa fa-eye"></i><a href="#">2350</a></span>
-                                        </div>
-                                        <a href="#" title="Read More">Read More <i class="fa fa-angle-right"></i></a>
-                                    </div>
-                                </div><!-- Type Post /- -->
-                            </div>
+                                    </div><!-- Type Post /- -->
+                                </div>
+                            @endforeach
                         </div>
                         <div class="item">
                             <div class="col-md-6 col-sm-6 col-xs-6 big-post">
                                 <!-- Type Post -->
                                 <div class="type-post color-1">
-                                    <div class="entry-cover"><a href="#"><img src="assets/images/slider-box1.jpg"
-                                                                              alt="Post"/></a></div>
+                                    <div class="entry-cover"><a href="{{ route('news.show', $bigNews['id']) }}"><img
+                                                src="{{ $bigNews['image'] }}"
+                                                alt="Post"/></a></div>
                                     <div class="entry-content">
                                         <div class="post-category"><a href="#" title="World">World</a></div>
-                                        <h3 class="entry-title"><a href="#">Grand Canyon Considers Changes to Back
-                                                country Rules for new hikers</a></h3>
-                                        <p>Reporter is one of the excellent magazine in the world.Newshub magazine
-                                            reached many readers very soon.</p>
+                                        <h3 class="entry-title"><a href="#">{{ $bigNews['title'] }}</a></h3>
+                                        <p>{{ $bigNews['description'] }}</p>
                                         <div class="entry-footer">
-                                            <span class="post-date"><a href="#">08 July, 2016</a></span>
+                                            <span class="post-date"><a href="#">{{ date('Y-m-d') }}</a></span>
                                             <span class="post-like"><i class="fa fa-heart-o"></i><a
                                                     href="#">356</a></span>
-                                            <span class="post-view"><i class="fa fa-eye"></i><a href="#">589</a></span>
+                                            <span class="post-view"><i class="fa fa-eye"></i><a
+                                                    href="#">589</a></span>
                                         </div>
-                                        <a href="#" title="Read More">Read More <i class="fa fa-angle-right"></i></a>
+                                        <a href="{{ route('news.show', $bigNews['id']) }}" title="Read More">узнать
+                                            больше <i
+                                                class="fa fa-angle-right"></i></a>
                                     </div>
                                 </div><!-- Type Post /- -->
                             </div>
-                            <div class="col-md-3 col-sm-3 col-xs-6 thumb-post">
-                                <!-- Type Post -->
-                                <div class="type-post color-2">
-                                    <div class="entry-cover"><a href="#"><img src="assets/images/slider-thumb1.jpg"
-                                                                              alt="Post"/></a></div>
-                                    <div class="entry-content">
-                                        <div class="post-category"><a href="#" title="Travel">Travel</a></div>
-                                        <h3 class="entry-title"><a href="#">National Forest System Trails Stewardship
-                                                Act</a></h3>
-                                        <p>Reporter is one of the excellent magazine in the world.Newshub magazine
-                                            reached many readers very soon.</p>
-                                        <div class="entry-footer">
-                                            <span class="post-date"><a href="#">12 June, 2016</a></span>
-                                            <span class="post-like"><i class="fa fa-heart-o"></i><a
-                                                    href="#">106</a></span>
-                                            <span class="post-view"><i class="fa fa-eye"></i><a href="#">256</a></span>
+                            @foreach( $thumbNews as $thumbNew)
+                                <div class="col-md-3 col-sm-3 col-xs-6 thumb-post">
+                                    <!-- Type Post -->
+                                    <div class="type-post color-2">
+                                        <div class="entry-cover"><a
+                                                href="{{ route('news.show', $thumbNew['id']) }}"><img
+                                                    src="{{ $thumbNew['image'] }}"
+                                                    alt="Post"/></a></div>
+                                        <div class="entry-content">
+                                            <div class="post-category"><a href="#" title="Travel">Travel</a></div>
+                                            <h3 class="entry-title"><a href="#">{{ $thumbNew['title'] }}</a></h3>
+                                            <p>{{ $thumbNew['description'] }}</p>
+                                            <div class="entry-footer">
+                                                <span class="post-date"><a href="#">{{ date('Y-m-d') }}</a></span>
+                                                <span class="post-like"><i class="fa fa-heart-o"></i><a
+                                                        href="#">106</a></span>
+                                                <span class="post-view"><i class="fa fa-eye"></i><a
+                                                        href="#">256</a></span>
+                                            </div>
+                                            <a href="{{ route('news.show', $thumbNew['id']) }}" title="Read More">читать
+                                                больше <i
+                                                    class="fa fa-angle-right"></i></a>
                                         </div>
-                                        <a href="#" title="Read More">Read More <i class="fa fa-angle-right"></i></a>
-                                    </div>
-                                </div><!-- Type Post /- -->
-                            </div>
-                            <div class="col-md-3 col-sm-3 col-xs-6 thumb-post">
-                                <!-- Type Post -->
-                                <div class="type-post color-3">
-                                    <div class="entry-cover"><a href="#"><img src="assets/images/slider-thumb2.jpg"
-                                                                              alt="Post"/></a></div>
-                                    <div class="entry-content">
-                                        <div class="post-category"><a href="#" title="Design">Design</a></div>
-                                        <h3 class="entry-title"><a href="#">Mercedes Benz CLS63 AMG In Depth Review</a>
-                                        </h3>
-                                        <p>Reporter is one of the excellent magazine in the world.Newshub magazine
-                                            reached many readers very soon.</p>
-                                        <div class="entry-footer">
-                                            <span class="post-date"><a href="#">22 June, 2016</a></span>
-                                            <span class="post-ratings">
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i> (5.0)
-												</span>
-                                        </div>
-                                        <a href="#" title="Read More">Read More <i class="fa fa-angle-right"></i></a>
-                                    </div>
-                                </div><!-- Type Post /- -->
-                            </div>
-                            <div class="col-md-3 col-sm-3 col-xs-6 thumb-post">
-                                <!-- Type Post -->
-                                <div class="type-post color-4">
-                                    <div class="entry-cover"><a href="#"><img src="assets/images/slider-thumb3.jpg"
-                                                                              alt="Post"/></a></div>
-                                    <div class="entry-content">
-                                        <div class="post-category"><a href="#" title="Sports">Sports</a></div>
-                                        <h3 class="entry-title"><a href="#">Florida Proposes Bear-Proofing Measures</a>
-                                        </h3>
-                                        <p>Reporter is one of the excellent magazine in the world.Newshub magazine
-                                            reached many readers very soon.</p>
-                                        <div class="entry-footer">
-                                            <span class="post-date"><a href="#">28 June, 2016</a></span>
-                                            <span class="post-like"><i class="fa fa-heart-o"></i><a
-                                                    href="#">952</a></span>
-                                            <span class="post-view"><i class="fa fa-eye"></i><a href="#">681</a></span>
-                                        </div>
-                                        <a href="#" title="Read More">Read More <i class="fa fa-angle-right"></i></a>
-                                    </div>
-                                </div><!-- Type Post /- -->
-                            </div>
-                            <div class="col-md-3 col-sm-3 col-xs-6 thumb-post">
-                                <!-- Type Post -->
-                                <div class="type-post color-5">
-                                    <div class="entry-cover"><a href="#"><img src="assets/images/slider-thumb4.jpg"
-                                                                              alt="Post"/></a></div>
-                                    <div class="entry-content">
-                                        <div class="post-category"><a href="#" title="business">business</a></div>
-                                        <h3 class="entry-title"><a href="#">Worst Android issues and how to fix them</a>
-                                        </h3>
-                                        <p>Reporter is one of the excellent magazine in the world.Newshub magazine
-                                            reached many readers very soon.</p>
-                                        <div class="entry-footer">
-                                            <span class="post-date"><a href="#">02 July, 2016</a></span>
-                                            <span class="post-like"><i class="fa fa-heart-o"></i><a
-                                                    href="#">320</a></span>
-                                            <span class="post-view"><i class="fa fa-eye"></i><a href="#">2350</a></span>
-                                        </div>
-                                        <a href="#" title="Read More">Read More <i class="fa fa-angle-right"></i></a>
-                                    </div>
-                                </div><!-- Type Post /- -->
-                            </div>
+                                    </div><!-- Type Post /- -->
+                                </div>
+                            @endforeach
                         </div>
                         <div class="item">
                             <div class="col-md-6 col-sm-6 col-xs-6 big-post">
                                 <!-- Type Post -->
                                 <div class="type-post color-1">
-                                    <div class="entry-cover"><a href="#"><img src="assets/images/slider-box1.jpg"
-                                                                              alt="Post"/></a></div>
+                                    <div class="entry-cover"><a href="{{ route('news.show', $bigNews['id']) }}"><img
+                                                src="{{ $bigNews['image'] }}"
+                                                alt="Post"/></a></div>
                                     <div class="entry-content">
                                         <div class="post-category"><a href="#" title="World">World</a></div>
-                                        <h3 class="entry-title"><a href="#">Grand Canyon Considers Changes to Back
-                                                country Rules for new hikers</a></h3>
-                                        <p>Reporter is one of the excellent magazine in the world.Newshub magazine
-                                            reached many readers very soon.</p>
+                                        <h3 class="entry-title"><a href="#">{{ $bigNews['title'] }}</a></h3>
+                                        <p>{{ $bigNews['description'] }}</p>
                                         <div class="entry-footer">
-                                            <span class="post-date"><a href="#">08 July, 2016</a></span>
+                                            <span class="post-date"><a href="#">{{ date('Y-m-d') }}</a></span>
                                             <span class="post-like"><i class="fa fa-heart-o"></i><a
                                                     href="#">356</a></span>
-                                            <span class="post-view"><i class="fa fa-eye"></i><a href="#">589</a></span>
+                                            <span class="post-view"><i class="fa fa-eye"></i><a
+                                                    href="#">589</a></span>
                                         </div>
-                                        <a href="#" title="Read More">Read More <i class="fa fa-angle-right"></i></a>
+                                        <a href="{{ route('news.show', $bigNews['id']) }}" title="Read More">узнать
+                                            больше <i
+                                                class="fa fa-angle-right"></i></a>
                                     </div>
                                 </div><!-- Type Post /- -->
                             </div>
-                            <div class="col-md-3 col-sm-3 col-xs-6 thumb-post">
-                                <!-- Type Post -->
-                                <div class="type-post color-2">
-                                    <div class="entry-cover"><a href="#"><img src="assets/images/slider-thumb1.jpg"
-                                                                              alt="Post"/></a></div>
-                                    <div class="entry-content">
-                                        <div class="post-category"><a href="#" title="Travel">Travel</a></div>
-                                        <h3 class="entry-title"><a href="#">National Forest System Trails Stewardship
-                                                Act</a></h3>
-                                        <p>Reporter is one of the excellent magazine in the world.Newshub magazine
-                                            reached many readers very soon.</p>
-                                        <div class="entry-footer">
-                                            <span class="post-date"><a href="#">12 June, 2016</a></span>
-                                            <span class="post-like"><i class="fa fa-heart-o"></i><a
-                                                    href="#">106</a></span>
-                                            <span class="post-view"><i class="fa fa-eye"></i><a href="#">256</a></span>
+                            @foreach( $thumbNews as $thumbNew)
+                                <div class="col-md-3 col-sm-3 col-xs-6 thumb-post">
+                                    <!-- Type Post -->
+                                    <div class="type-post color-2">
+                                        <div class="entry-cover"><a
+                                                href="{{ route('news.show', $thumbNew['id']) }}"><img
+                                                    src="{{ $thumbNew['image'] }}"
+                                                    alt="Post"/></a></div>
+                                        <div class="entry-content">
+                                            <div class="post-category"><a href="#" title="Travel">Travel</a></div>
+                                            <h3 class="entry-title"><a href="#">{{ $thumbNew['title'] }}</a></h3>
+                                            <p>{{ $thumbNew['description'] }}</p>
+                                            <div class="entry-footer">
+                                                <span class="post-date"><a href="#">{{ date('Y-m-d') }}</a></span>
+                                                <span class="post-like"><i class="fa fa-heart-o"></i><a
+                                                        href="#">106</a></span>
+                                                <span class="post-view"><i class="fa fa-eye"></i><a
+                                                        href="#">256</a></span>
+                                            </div>
+                                            <a href="{{ route('news.show', $thumbNew['id']) }}" title="Read More">читать
+                                                больше <i
+                                                    class="fa fa-angle-right"></i></a>
                                         </div>
-                                        <a href="#" title="Read More">Read More <i class="fa fa-angle-right"></i></a>
-                                    </div>
-                                </div><!-- Type Post /- -->
-                            </div>
-                            <div class="col-md-3 col-sm-3 col-xs-6 thumb-post">
-                                <!-- Type Post -->
-                                <div class="type-post color-3">
-                                    <div class="entry-cover"><a href="#"><img src="assets/images/slider-thumb2.jpg"
-                                                                              alt="Post"/></a></div>
-                                    <div class="entry-content">
-                                        <div class="post-category"><a href="#" title="Design">Design</a></div>
-                                        <h3 class="entry-title"><a href="#">Mercedes Benz CLS63 AMG In Depth Review</a>
-                                        </h3>
-                                        <p>Reporter is one of the excellent magazine in the world.Newshub magazine
-                                            reached many readers very soon.</p>
-                                        <div class="entry-footer">
-                                            <span class="post-date"><a href="#">22 June, 2016</a></span>
-                                            <span class="post-ratings">
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i> (5.0)
-												</span>
-                                        </div>
-                                        <a href="#" title="Read More">Read More <i class="fa fa-angle-right"></i></a>
-                                    </div>
-                                </div><!-- Type Post /- -->
-                            </div>
-                            <div class="col-md-3 col-sm-3 col-xs-6 thumb-post">
-                                <!-- Type Post -->
-                                <div class="type-post color-4">
-                                    <div class="entry-cover"><a href="#"><img src="assets/images/slider-thumb3.jpg"
-                                                                              alt="Post"/></a></div>
-                                    <div class="entry-content">
-                                        <div class="post-category"><a href="#" title="Sports">Sports</a></div>
-                                        <h3 class="entry-title"><a href="#">Florida Proposes Bear-Proofing Measures</a>
-                                        </h3>
-                                        <p>Reporter is one of the excellent magazine in the world.Newshub magazine
-                                            reached many readers very soon.</p>
-                                        <div class="entry-footer">
-                                            <span class="post-date"><a href="#">28 June, 2016</a></span>
-                                            <span class="post-like"><i class="fa fa-heart-o"></i><a
-                                                    href="#">952</a></span>
-                                            <span class="post-view"><i class="fa fa-eye"></i><a href="#">681</a></span>
-                                        </div>
-                                        <a href="#" title="Read More">Read More <i class="fa fa-angle-right"></i></a>
-                                    </div>
-                                </div><!-- Type Post /- -->
-                            </div>
-                            <div class="col-md-3 col-sm-3 col-xs-6 thumb-post">
-                                <!-- Type Post -->
-                                <div class="type-post color-5">
-                                    <div class="entry-cover"><a href="#"><img src="assets/images/slider-thumb4.jpg"
-                                                                              alt="Post"/></a></div>
-                                    <div class="entry-content">
-                                        <div class="post-category"><a href="#" title="business">business</a></div>
-                                        <h3 class="entry-title"><a href="#">Worst Android issues and how to fix them</a>
-                                        </h3>
-                                        <p>Reporter is one of the excellent magazine in the world.Newshub magazine
-                                            reached many readers very soon.</p>
-                                        <div class="entry-footer">
-                                            <span class="post-date"><a href="#">02 July, 2016</a></span>
-                                            <span class="post-like"><i class="fa fa-heart-o"></i><a
-                                                    href="#">320</a></span>
-                                            <span class="post-view"><i class="fa fa-eye"></i><a href="#">2350</a></span>
-                                        </div>
-                                        <a href="#" title="Read More">Read More <i class="fa fa-angle-right"></i></a>
-                                    </div>
-                                </div><!-- Type Post /- -->
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="col-md-6 col-sm-6 col-xs-6 big-post">
-                                <!-- Type Post -->
-                                <div class="type-post color-1">
-                                    <div class="entry-cover"><a href="#"><img src="assets/images/slider-box1.jpg"
-                                                                              alt="Post"/></a></div>
-                                    <div class="entry-content">
-                                        <div class="post-category"><a href="#" title="World">World</a></div>
-                                        <h3 class="entry-title"><a href="#">Grand Canyon Considers Changes to Back
-                                                country Rules for new hikers</a></h3>
-                                        <p>Reporter is one of the excellent magazine in the world.Newshub magazine
-                                            reached many readers very soon.</p>
-                                        <div class="entry-footer">
-                                            <span class="post-date"><a href="#">08 July, 2016</a></span>
-                                            <span class="post-like"><i class="fa fa-heart-o"></i><a
-                                                    href="#">356</a></span>
-                                            <span class="post-view"><i class="fa fa-eye"></i><a href="#">589</a></span>
-                                        </div>
-                                        <a href="#" title="Read More">Read More <i class="fa fa-angle-right"></i></a>
-                                    </div>
-                                </div><!-- Type Post /- -->
-                            </div>
-                            <div class="col-md-3 col-sm-3 col-xs-6 thumb-post">
-                                <!-- Type Post -->
-                                <div class="type-post color-2">
-                                    <div class="entry-cover"><a href="#"><img src="assets/images/slider-thumb1.jpg"
-                                                                              alt="Post"/></a></div>
-                                    <div class="entry-content">
-                                        <div class="post-category"><a href="#" title="Travel">Travel</a></div>
-                                        <h3 class="entry-title"><a href="#">National Forest System Trails Stewardship
-                                                Act</a></h3>
-                                        <p>Reporter is one of the excellent magazine in the world.Newshub magazine
-                                            reached many readers very soon.</p>
-                                        <div class="entry-footer">
-                                            <span class="post-date"><a href="#">12 June, 2016</a></span>
-                                            <span class="post-like"><i class="fa fa-heart-o"></i><a
-                                                    href="#">106</a></span>
-                                            <span class="post-view"><i class="fa fa-eye"></i><a href="#">256</a></span>
-                                        </div>
-                                        <a href="#" title="Read More">Read More <i class="fa fa-angle-right"></i></a>
-                                    </div>
-                                </div><!-- Type Post /- -->
-                            </div>
-                            <div class="col-md-3 col-sm-3 col-xs-6 thumb-post">
-                                <!-- Type Post -->
-                                <div class="type-post color-3">
-                                    <div class="entry-cover"><a href="#"><img src="assets/images/slider-thumb2.jpg"
-                                                                              alt="Post"/></a></div>
-                                    <div class="entry-content">
-                                        <div class="post-category"><a href="#" title="Design">Design</a></div>
-                                        <h3 class="entry-title"><a href="#">Mercedes Benz CLS63 AMG In Depth Review</a>
-                                        </h3>
-                                        <p>Reporter is one of the excellent magazine in the world.Newshub magazine
-                                            reached many readers very soon.</p>
-                                        <div class="entry-footer">
-                                            <span class="post-date"><a href="#">22 June, 2016</a></span>
-                                            <span class="post-ratings">
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i> (5.0)
-												</span>
-                                        </div>
-                                        <a href="#" title="Read More">Read More <i class="fa fa-angle-right"></i></a>
-                                    </div>
-                                </div><!-- Type Post /- -->
-                            </div>
-                            <div class="col-md-3 col-sm-3 col-xs-6 thumb-post">
-                                <!-- Type Post -->
-                                <div class="type-post color-4">
-                                    <div class="entry-cover"><a href="#"><img src="assets/images/slider-thumb3.jpg"
-                                                                              alt="Post"/></a></div>
-                                    <div class="entry-content">
-                                        <div class="post-category"><a href="#" title="Sports">Sports</a></div>
-                                        <h3 class="entry-title"><a href="#">Florida Proposes Bear-Proofing Measures</a>
-                                        </h3>
-                                        <p>Reporter is one of the excellent magazine in the world.Newshub magazine
-                                            reached many readers very soon.</p>
-                                        <div class="entry-footer">
-                                            <span class="post-date"><a href="#">28 June, 2016</a></span>
-                                            <span class="post-like"><i class="fa fa-heart-o"></i><a
-                                                    href="#">952</a></span>
-                                            <span class="post-view"><i class="fa fa-eye"></i><a href="#">681</a></span>
-                                        </div>
-                                        <a href="#" title="Read More">Read More <i class="fa fa-angle-right"></i></a>
-                                    </div>
-                                </div><!-- Type Post /- -->
-                            </div>
-                            <div class="col-md-3 col-sm-3 col-xs-6 thumb-post">
-                                <!-- Type Post -->
-                                <div class="type-post color-5">
-                                    <div class="entry-cover"><a href="#"><img src="assets/images/slider-thumb4.jpg"
-                                                                              alt="Post"/></a></div>
-                                    <div class="entry-content">
-                                        <div class="post-category"><a href="#" title="business">business</a></div>
-                                        <h3 class="entry-title"><a href="#">Worst Android issues and how to fix them</a>
-                                        </h3>
-                                        <p>Reporter is one of the excellent magazine in the world.Newshub magazine
-                                            reached many readers very soon.</p>
-                                        <div class="entry-footer">
-                                            <span class="post-date"><a href="#">02 July, 2016</a></span>
-                                            <span class="post-like"><i class="fa fa-heart-o"></i><a
-                                                    href="#">320</a></span>
-                                            <span class="post-view"><i class="fa fa-eye"></i><a href="#">2350</a></span>
-                                        </div>
-                                        <a href="#" title="Read More">Read More <i class="fa fa-angle-right"></i></a>
-                                    </div>
-                                </div><!-- Type Post /- -->
-                            </div>
+                                    </div><!-- Type Post /- -->
+                                </div>
+                            @endforeach
                         </div>
                     </div>
                     <!-- Indicators -->

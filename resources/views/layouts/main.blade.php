@@ -15,7 +15,7 @@
     <link href="{{ asset('assets/css/elements.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/rtl.css') }}" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
-
+    
 </head>
 <body>
 <!-- Loader -->
@@ -28,7 +28,7 @@
 </div>
 <!-- Loader /- -->
 <x-header></x-header>
-<div class="main-container">
+<div class="main-container mt-lg-5">
     @yield('content')
 </div>
 <x-footer></x-footer>

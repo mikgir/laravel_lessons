@@ -11,7 +11,7 @@
                     <div class="col-md-8 col-sm-6 col-xs-6 content-area">
                         <article class="type-post color-3">
                             <div class="entry-cover">
-                                <img src="{{ asset('assets/images/single-post1.jpg') }}" alt="Post"/>
+                                <img src="{{ $news['image'] }}" alt="Post" style="width: 200%; height: auto"/>
                                 <div class="entry-header">
                                     <div class="post-category"><a href="#" title="Business">Business</a></div>
                                     <h3 class="entry-title">{{ $news['title'] }}</h3>
@@ -25,7 +25,7 @@
                             <div class="entry-content">
                                 <p>{{ $news['description'] }}</p>
                                 <blockquote>
-                                    <p>Reporter is one </p>
+                                    <p></p>
                                 </blockquote>
                             </div>
 
@@ -33,15 +33,14 @@
                             <div class="about-author-box">
                                 <h3>About Author</h3>
                                 <div class="author">
-                                    <i><img src="{{ asset('assets/images/author.jpg') }}" alt="Author"/></i>
+                                    <i><img src="" alt="Author"/></i>
                                     <h4>Tommy Walker</h4>
                                     <ul>
-                                        <li><a href="#" class="fb" title="Facebook"><i class="fa fa-facebook"></i></a>
+                                        <li><a href="#" class="fb" title="Facebook"><i class="fa fa-vk"></i></a>
                                         </li>
                                         <li><a href="#" class="tw" title="Twitter"><i class="fa fa-twitter"></i></a>
                                         </li>
-                                        <li><a href="#" class="go" title="Google"><i class="fa fa-google"></i></a></li>
-                                        <li><a href="#" class="ln" title="Linkedin"><i class="fa fa-linkedin"></i></a>
+                                        <li><a href="#" class="go" title="Google"><i class="fa fa-telegram"></i></a>
                                         </li>
                                     </ul>
                                     <p>reporter is one of the excellent magazine in the world.Newshub magazine reach

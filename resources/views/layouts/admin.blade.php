@@ -1,104 +1,174 @@
-<!doctype html>
-<html lang="ru">
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Required meta tags -->
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <title>@yield('title')</title>
-    <!-- Bootstrap core CSS -->
-    <link href="{{asset('css/app.css')}}" rel="stylesheet">
+    <!--plugins-->
+    <link href="{{ asset('admin/assets/plugins/simplebar/css/simplebar.css') }}" rel="stylesheet"/>
+    <link href="{{ asset('admin/assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css') }}" rel="stylesheet"/>
+    <link href="{{ asset('admin/assets/plugins/metismenu/css/metisMenu.min.css') }}" rel="stylesheet"/>
+    <!-- loader-->
+    <link href="{{ asset('admin/assets/css/pace.min.css') }}" rel="stylesheet"/>
+    <script src="{{ asset('admin/assets/js/pace.min.js') }}}"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{ asset('admin/assets/css/bootstrap.min.css') }}"/>
+    <!-- Icons CSS -->
+    <link rel="stylesheet" href="{{ asset('admin/assets/css/icons.css') }}"/>
+    <!-- App CSS -->
+    <link rel="stylesheet" href="{{ asset('admin/assets/css/app.css') }}"/>
 
 
-    <style>
-        .bd-placeholder-img {
-            font-size: 1.125rem;
-            text-anchor: middle;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            user-select: none;
-        }
-
-        @media (min-width: 768px) {
-            .bd-placeholder-img-lg {
-                font-size: 3.5rem;
-            }
-        }
-    </style>
-
-
-    <!-- Custom styles for this template -->
-    {{--    <link href="{{asset('css/dashboard.css')}}" rel="stylesheet">--}}
 </head>
-<body>
 
-<header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-    <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">GMdev</a>
-    <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse"
-            data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false"
-            aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="navbar-nav">
-        <div class="nav-item text-nowrap">
-            <a class="nav-link px-3" href="#">Выход</a>
+<body class="bg-theme bg-theme1">
+<!-- wrapper -->
+<div class="wrapper">
+    <!--sidebar-wrapper-->
+
+    <div class="sidebar-wrapper" data-simplebar="true">
+        <div class="sidebar-header">
+            <div>
+                <h4 class="logo-text">GMdev | ADMIN</h4>
+            </div>
+            <a href="javascript:;" class="toggle-btn ml-auto"> <i class="bx bx-menu"></i>
+            </a>
         </div>
+        <!--navigation-->
+        <ul class="metismenu" id="menu">
+            <li>
+                <a href="javascript:;" class="has-arrow">
+                    <div class="parent-icon"><i class="bx bx-home-alt"></i>
+                    </div>
+                    <div class="menu-title">Dashboard</div>
+                </a>
+                <ul>
+                    <li><a href="#"><i class="bx bx-right-arrow-alt"></i>Главная</a>
+                    </li>
+                    <li><a href="#"><i class="bx bx-right-arrow-alt"></i>Обзоры</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="menu-label">МЕНЮ</li>
+            <li>
+                <a href="{{ route('admin.categories.index') }}">
+                    <div class="parent-icon"><i class="bx bx-book"></i>
+                    </div>
+                    <div class="menu-title">Категории</div>
+                </a>
+            </li>
+            <li>
+                <a href="{{ route('admin.news.index') }}">
+                    <div class="parent-icon"><i class="bx bx-list-ol"></i>
+                    </div>
+                    <div class="menu-title">Новости</div>
+                </a>
+            </li>
+        </ul>
+        <!--end navigation-->
     </div>
-</header>
-
-<div class="container-fluid">
-    <div class="row">
-        <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block text-white bg-dark sidebar collapse">
-            <div class="position-sticky pt-3">
-                <ul class="nav flex-column">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">
-                            <span data-feather="home"></span>
-                            Dashboard
+    <!--end sidebar-wrapper-->
+    <!--header-->
+    <header class="top-header">
+        <nav class="navbar navbar-expand">
+            <div class="left-topbar d-flex align-items-center">
+                <a href="javascript:;" class="toggle-btn"> <i class="bx bx-menu"></i>
+                </a>
+            </div>
+            <div class="flex-grow-1 search-bar">
+                <div class="input-group">
+                    <div class="input-group-prepend search-arrow-back">
+                        <button class="btn btn-search-back" type="button"><i class="bx bx-arrow-back"></i>
+                        </button>
+                    </div>
+                    <input type="text" class="form-control" placeholder="search"/>
+                    <div class="input-group-append">
+                        <button class="btn btn-search" type="button"><i class="lni lni-search-alt"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="right-topbar ml-auto">
+                <ul class="navbar-nav">
+                    <li class="nav-item search-btn-mobile">
+                        <a class="nav-link position-relative" href="javascript:;"> <i
+                                class="bx bx-search vertical-align-middle"></i>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <span data-feather="file"></span>
-                            Orders
+                    <li class="nav-item dropdown dropdown-user-profile">
+                        <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" href="javascript:;"
+                           data-toggle="dropdown">
+                            <div class="media user-box align-items-center">
+                                <div class="media-body user-info">
+                                    <p class="user-name mb-0">Mik Gir</p>
+                                    <p class="designattion mb-0">Available</p>
+                                </div>
+                                <img src="https://via.placeholder.com/110x110" class="user-img" alt="user avatar">
+                            </div>
                         </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <span data-feather="shopping-cart"></span>
-                            Products
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <span data-feather="users"></span>
-                            Customers
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <span data-feather="bar-chart-2"></span>
-                            Reports
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <span data-feather="layers"></span>
-                            Integrations
-                        </a>
+                        <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href="javascript:;"><i
+                                    class="bx bx-user"></i><span>Profile</span></a>
+                            <a class="dropdown-item" href="javascript:;"><i
+                                    class="bx bx-cog"></i><span>Settings</span></a>
+                            <a class="dropdown-item" href="javascript:;"><i
+                                    class="bx bx-tachometer"></i><span>Dashboard</span></a>
+                            <a class="dropdown-item" href="javascript:;"><i
+                                    class="bx bx-wallet"></i><span>Earnings</span></a>
+                            <a class="dropdown-item" href="javascript:;"><i
+                                    class="bx bx-cloud-download"></i><span>Downloads</span></a>
+                            <div class="dropdown-divider mb-0"></div>
+                            <a class="dropdown-item" href="javascript:;"><i
+                                    class="bx bx-power-off"></i><span>Logout</span></a>
+                        </div>
                     </li>
                 </ul>
             </div>
         </nav>
+    </header>
+    <!--end header-->
+    <!--page-wrapper-->
+    <main>
+        <div class="page-wrapper">
+            <!--page-content-wrapper-->
+            <div class="page-content-wrapper">
+                <div class="page-content">
+                    @yield('content')
+                </div>
+            </div>
+            <!--end page-content-wrapper-->
+        </div>
 
-        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-            @yield('content')
-        </main>
-    </div>
+    </main>
+    <!--end page-wrapper-->
+    <!--start overlay-->
+    <div class="overlay toggle-btn-mobile"></div>
+    <!--end overlay-->
+    <!--Start Back To Top Button--> <a href="javaScript:;" class="back-to-top"><i class='bx bxs-up-arrow-alt'></i></a>
+    <!--End Back To Top Button-->
+    <!--footer -->
+    <footer>
+        <div class="footer">
+            <p class="mb-0">GMdev REPORTER &copy; {{ date('Y') }}</p>
+        </div>
+    </footer>
+    <!-- end footer -->
 </div>
 
+<!-- JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="{{ asset('admin/assets/js/jquery.min.js') }}"></script>
+<script src="{{ asset('admin/assets/js/popper.min.js') }}"></script>
+<script src="{{ asset('admin/assets/js/bootstrap.min.js') }}"></script>
+<!--plugins-->
+<script src="{{ asset('admin/assets/plugins/simplebar/js/simplebar.min.js') }}"></script>
+<script src="{{ asset('admin/assets/plugins/metismenu/js/metisMenu.min.js') }}"></script>
+<script src="{{ asset('admin/assets/plugins/perfect-scrollbar/js/perfect-scrollbar.js') }}"></script>
 
-<script src="{{asset('js/app.js')}}"></script>
-<script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js"></script>
-
+<script src="{{ asset('admin/assets/js/index2.js') }}"></script>
+<!-- App JS -->
+<script src="{{ asset('admin/assets/js/app.js') }}"></script>
 </body>
-</html>
 
+</html>

@@ -15,9 +15,13 @@ class HomeController extends Controller
     public function index(): View|Factory|Application
     {
         $news = $this->getNews();
+        $bigNews = $this->getSlideNews($id = '1');
+        $thumbNews = $this->getThumbNews();
 
         return view('home', [
-            'newsList' => $news
+            'newsList' => $news,
+            'bigNews' => $bigNews,
+            'thumbNews' => $thumbNews
         ]);
     }
 
@@ -27,9 +31,13 @@ class HomeController extends Controller
     public function showAll(): Factory|View|Application
     {
         $news = $this->getNews();
+        $bigNews = $this->getSlideNews($id = '1');
+        $thumbNews = $this->getThumbNews();
 
         return view('news.news', [
-            'newsList' => $news
+            'newsList' => $news,
+            'bigNews' => $bigNews,
+            'thumbNews' => $thumbNews
         ]);
 
     }

@@ -19,10 +19,10 @@
                     <div class="col-md-4 col-sm-4 col-xs-3 top-social">
                         <a href="#"><i class="social_share"></i></a>
                         <ul>
-                            <li><a href="#" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#" title="Facebook"><i class="fa fa-telegram"></i></a></li>
                             <li><a href="#" title="Twitter"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
-                            <li><a href="#" title="Google+"><i class="fa fa-google-plus"></i></a></li>
+                            <li><a href="#" title="Linkedin"><i class="fa fa-vk"></i></a></li>
+                            <li><a href="#" title="Google+"><i class="fa fa-pinterest"></i></a></li>
                         </ul>
                     </div>
                     <div class="col-md-4 col-sm-4 col-xs-6 top-search">
